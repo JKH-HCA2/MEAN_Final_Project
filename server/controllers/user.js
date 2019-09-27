@@ -1,11 +1,11 @@
 // require new custom Service Module
-var userService = require('../services/service');
+var Service = require('../services/service');
 
-var UserController = {};
+var Controller = {};
 
 // GET: http://localhost:3000/users/
-UserController.list = (req, res) => {
-    userService.list()
+Controller.list = (req, res) => {
+    Service.list()
         .then((users) => {
             if (users) {
                 res.json(users);
@@ -20,9 +20,9 @@ UserController.list = (req, res) => {
 };
 
 // GET: http://localhost:3000/users/user
-UserController.getUserData = (req, res) => {
+Controller.getUserData = (req, res) => {
     let userId = req.params.id
-    userService.getUserData(userId)
+    Service.getUserData(userId)
         .then((user) => {
             if (user) {
                 res.json(user);                
@@ -37,8 +37,8 @@ UserController.getUserData = (req, res) => {
 };
 
 // POST: http://localhost:3000/users/register/
-UserController.register = (req, res) => {
-    userService.register({
+Controller.register = (req, res) => {
+    Service.register({
             username: req.body.username,
             password: req.body.password,
             email: req.body.email,
@@ -54,11 +54,11 @@ UserController.register = (req, res) => {
 };
 
 // POST: http://localhost:3000/users/login
-UserController.postUserLogin = (req, res) =>
+Controller.postUserLogin = (req, res) =>
 {
     var username = req.body.username;
     let password = req.body.password;
-    userService.login({
+    Service.login({
         username: username,
         password: password
     })
@@ -81,10 +81,10 @@ UserController.postUserLogin = (req, res) =>
 };
 
 // PUT: http://localhost:3000/users/update
-UserController.update = (req, res) => {
+Controller.update = (req, res) => {
     let userId = req.params.id;
     let email = req.body.email;
-    userService.update(userId, {
+    Service.update(userId, {
             email: email
         })
         .then((user) => {
@@ -101,8 +101,8 @@ UserController.update = (req, res) => {
 };
 
 // DELETE: http://localhost:3000/users/{id} 
-UserController.delete = (req, res) => {
-    userService.delete(req.params.id)
+Controller.delete = (req, res) => {
+    Service.delete(req.params.id)
         .then((user) => {
             res.json(user);
         })
@@ -112,4 +112,4 @@ UserController.delete = (req, res) => {
         });
 };
 
-module.exports = UserController;
+module.exports = Controller;

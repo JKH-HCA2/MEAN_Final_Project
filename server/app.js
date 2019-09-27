@@ -13,6 +13,12 @@ var teamsRouter = require('./routes/teams');
 
 var app = express();
 
+const cors = require('cors');
+app.use(cors({
+  origin: ["http://localhost:4200"],
+  credentials: true
+}))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
