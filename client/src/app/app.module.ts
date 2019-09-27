@@ -1,16 +1,50 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule }  from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { TeamsComponent } from './teams/teams.component';
+import { ManagerComponent } from './manager/manager.component';
+
+import { UserService } from './providers/user.service';
+import { AuthService } from './providers/auth.service';
+
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'manager', component: ManagerComponent},
+  {path: 'teams', component: TeamsComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    NavComponent,
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent,
+    TeamsComponent,
+    ManagerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    UserService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
