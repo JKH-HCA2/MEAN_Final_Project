@@ -13,6 +13,7 @@ export class TeamsComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    
   }
 
 }

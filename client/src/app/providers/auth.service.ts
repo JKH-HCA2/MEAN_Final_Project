@@ -4,6 +4,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
+  private isAuth: boolean = false;
+  private isAdmin: boolean = false;
+  constructor() {}
 
-  constructor() { }
+  setAuthStatus(status: boolean) {
+    this.isAuth = status;
+  }
+
+  getAuthStatus() {
+    return this.isAuth;
+  }
+
+  setAdminStatus(status: boolean) {
+    this.isAdmin = status;
+  }
+
+  getAdminStatus() {
+    return this.isAdmin;
+  }
 }

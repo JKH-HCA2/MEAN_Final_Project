@@ -16,7 +16,6 @@ export class UserService {
 
     withCredentials:true
   };
-  private authenticated: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -30,11 +29,21 @@ export class UserService {
       .pipe(map(res => <any[]>res));
   }
 
-  setAuthStatus(status: boolean) {
-    this.authenticated = status;  
+  deleteUser(userId: number) {
+    return this.http.delete(`${this.usersEndpoint}${userId}`, this.httpOptions)
+      .pipe(map(res => <any[]>res));
+  }
+  
+  getUsers() {
+    return this.http.get(this.usersEndpoint, this.httpOptions)
+    .pipe(map(res => <any[]>res));
   }
 
-  getAuthStatus() {
-    return this.authenticated;
+  getUserById(userId: number) {
+    return this.http.get<User>(`${this.usersEndpoint}${userId}`, this.httpOptions);
+  }
+
+  updateUser(user: User) {
+    return this.http.put(`${this.usersEndpoint}${user.userId}`, user);
   }
 }
