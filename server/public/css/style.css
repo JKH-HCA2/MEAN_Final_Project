@@ -1,0 +1,84 @@
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+  background-image: url("../img/backgroundpattern.png");
+}
+th {
+  width: 100%;
+}
+
+.hidden
+{
+  display: none;
+}
+
+.selectors
+{
+  width:50%;
+}
+
+.registrationForm
+{
+  padding:3%;
+  width: 50%;
+  background-color: cornsilk;
+}
+
+#detailsForm
+{
+  padding: 3%;
+  width: 65%;
+  background-color: cornsilk;
+}
+.form-login {
+  width: 40%;
+  margin-left: 30%;
+  background-color: cornsilk;
+}
+.warning-div
+{
+  background-color: mistyrose;
+  color: red;
+}
+.stop-warning {
+  background-color: mistyrose;
+  color: red;
+}
+
+
+
+#dataDisplay {
+  width: 60%;
+  background-color: cornsilk;
+}
+
+
+
+#myNav {
+  background-color: cornsilk;
+}
+
+.card-body {
+  background-color: white;
+}
+
+.carousel-label {
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 3px 2px black;
+}
+
+@media only screen and (max-width: 1080px) {
+  #dataDisplay {
+      width: 90%;
+  }
+  #detailsForm {
+      width: 90%;
+  }
+  .registrationForm {
+      width: 100%;
+  }
+}

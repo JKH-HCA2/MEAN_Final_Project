@@ -1,0 +1,42 @@
+<header>
+    <nav id="myNav" class="navbar navbar-expand-lg navbar-light border-bottom border-dark">
+        <a class="navbar-brand" href="#">BBall Rec</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/teams">Teams </a>
+                </li>
+                <li class="nav-item">
+                    <button id="logoutBtn" class="nav-link" type="button" href="/">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="text-center container-fluid border border-dark p-5 rounded-lg mx-auto mt-5" id="dataDisplay">
+        <h1 class="display-4">Edit Account</h1>
+        <form id="editForm">
+            <label for="editEmail" class="sr-only">Email Address</label>
+            <input name="email" type="email" id="editEmail" class="form-control" placeholder="Email address" required autofocus />
+            <button type="button" id="editEmailBtn" class="btn mt-3 btn-outline-warning">Edit</button>
+            <button type="button" id="delBtn" class="btn mt-3 btn-outline-danger">Delete Account</button>
+        </form>
+    </div>
+</main>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="/js/edit.js"></script>

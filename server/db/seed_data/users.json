@@ -1,0 +1,32 @@
+[
+    {
+        "email": "foobar@test.com",
+        "username": "foobar",
+        "password": "password",
+        "is_admin": 1
+    },
+    {
+        "email": "bizbaz@test.com",
+        "username": "bizbaz",
+        "password": "password",
+        "is_admin": 0
+    },
+    {
+        "email": "bingbang@test.com",
+        "username": "bingbang",
+        "password": "password",
+        "is_admin": 0
+    },
+    {
+        "email": "pingpang@test.com",
+        "username": "pingpang",
+        "password": "password",
+        "is_admin": 0
+    },
+    {
+        "email": "dingdong@test.com",
+        "username": "dingdong",
+        "password": "password",
+        "is_admin": 0
+    }
+]
