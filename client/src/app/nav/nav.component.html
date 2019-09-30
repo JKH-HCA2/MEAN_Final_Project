@@ -22,6 +22,9 @@
                 <li *ngIf="!isAuth()" class="nav-item">
                     <a class="nav-link" (click)="goHere('login')">Login</a>
                 </li>
+                <li *ngIf="isAdmin()" class="nav-item">
+                    <a class="nav-link" (click)="goHere('manager')">Users</a>
+                </li>
                 <li *ngIf="isAuth()" class="nav-item">
                     <a class="nav-link" (click)="onLogout()">Logout</a>
                 </li>
