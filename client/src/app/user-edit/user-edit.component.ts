@@ -14,14 +14,17 @@ export class UserEditComponent implements OnInit {
   
   email: string;
   uniqueId: number;
-  
+
   constructor(private authService: AuthService, private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    // If user isn't logged in they are redirected to the login screen
     if(!this.authService.getAuthStatus()) {
       this.router.navigate(['login']);
     } else {
+      // unique id is stored
       this.uniqueId = this.authService.getUniqueId();
+      // user is called from the server
       this.userService.getUserById(this.uniqueId).subscribe(data => {
         this.email = data["email"];
       });
@@ -39,6 +42,7 @@ export class UserEditComponent implements OnInit {
     // Delete user by calling user service
     this.userService.deleteUser(this.uniqueId).subscribe(data => {
       this.router.navigate([""]);
+      // on deletion user auth/admin status's are revoked
       this.authService.setAuthStatus(false);
       this.authService.setAdminStatus(false);
     });
