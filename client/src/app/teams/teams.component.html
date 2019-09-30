@@ -1,20 +1,42 @@
 <main>
-    <div class="text-center container-fluid border border-dark p-5 rounded-lg mx-auto mt-5" id="dataDisplay">
-        <h1 class="display-4">Team Lookup</h1>
-        <div id="lookupContainer" class="container-fluid mt-4">
-             
-                    <label for="searchBy">Search By:</label>
-                    <select id="searchBy" name="searchBy" class="selectors custom-select">
-                        <option selected disabled>Choose a filter</option>
-                        <option value="League">League</option>
-                        <option value="Team">Team</option>
-                        <option value="Number of Members"># of Team Members</option>
-                        <option value="All">View All</option>
-                    </select>
+    <form action="#" method="GET" id="searchForm">
+        <div class="text-center container-fluid border border-dark p-5 rounded-lg mx-auto mt-5" id="dataDisplay">
+            <h1 class="display-4">Team Lookup</h1>
+            <div id="lookupContainer" class="container-fluid mt-4">
+                <label for="searchBy">Search By League:</label>
+                <select (change)="onSelect($event.target.value)" id="searchBy" name="searchBy"
+                    class="selectors custom-select">
+                    <option selected value="0" id="default">Choose a League</option>
+                    <option *ngFor="let league of leagues" value="{{league.Code}}" id="{{league.Code">{{league.Name}}</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <div class="mx-auto mt-3">
+                    <button type="button" class="btn btn-primary" id="viewAllBtn" (click)="viewAll()">View All</button>
+                    <button type="reset" class="btn btn-secondary" id="resetBtn" (click)="resetBtn()">Reset</button>
                 </div>
-                
-            <div id="tableContainer" class="container-fluid">
-
             </div>
         </div>
+    </form>
+
+    <div>
+        <table id="teamsTable" class="table table-dark mt-5">
+            <thead id="teamHead">
+                <tr>
+                    <th scope="col">Team Name</th>
+                    <th scope="col">Manager Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"># of Members</th>
+                </tr>
+            </thead>
+            <tbody id="teamBody">
+                <tr *ngFor="let team of teams">
+                    <td>{{team.TeamName}}</td>
+                    <td>{{team.ManagerName}}</td>
+                    <td>{{team.ManagerEmail}}</td>
+                    <td>{{team.Members.length}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </main>
