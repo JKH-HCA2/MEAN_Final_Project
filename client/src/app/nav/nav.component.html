@@ -8,19 +8,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" (click)="goHome()">Home </a>
+                    <a class="nav-link" (click)="goHere('')">Home </a>
                 </li>
                 <li *ngIf="isAuth()" class="nav-item">
-                    <a class="nav-link" (click)="goTeams()">Teams </a>
+                    <a class="nav-link" (click)="goHere('teams')">Teams </a>
                 </li>
                 <li *ngIf="isAuth()" class="nav-item">
-                    <a class="nav-link" (click)="goManager()">Edit Account </a>
+                    <a class="nav-link" (click)="goHere('user-edit')">Edit Account </a>
                 </li>
                 <li *ngIf="!isAuth()" class="nav-item">
-                    <a class="nav-link" (click)="goRegister()">Register</a>
+                    <a class="nav-link" (click)="goHere('register')">Register</a>
                 </li>
                 <li *ngIf="!isAuth()" class="nav-item">
-                    <a class="nav-link" (click)="goLogin()">Login</a>
+                    <a class="nav-link" (click)="goHere('login')">Login</a>
+                </li>
+                <li *ngIf="isAuth()" class="nav-item">
+                    <a class="nav-link" (click)="onLogout()">Logout</a>
                 </li>
             </ul>
         </div>

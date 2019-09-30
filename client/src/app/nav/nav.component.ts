@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { UserService } from './../providers/user.service';
+import { AuthService } from './../providers/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,27 +10,27 @@ import { UserService } from './../providers/user.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private userService: UserService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  ngOnInit() { }
 
   isAuth(): boolean {
-    return this.userService.getAuthStatus()
+    return this.authService.getAuthStatus();
   }
-  goHome() {
-    this.router.navigate([''])
+  isAdmin(): boolean {
+    return this.authService.getAdminStatus();
   }
-  goTeams() {
-    this.router.navigate(['teams'])
+  onLogout(): void {
+    this.authService.setAuthStatus(false);
+    this.authService.setAdminStatus(false);
+    this.router.navigate([""]);
   }
-  goRegister() {
-    this.router.navigate(['register'])
-  }
-  goLogin() {
-    this.router.navigate(['login'])
-  }
-  goManager() {
-    this.router.navigate(['manager'])
+
+  goHere(route: string) : void {
+    this.router.navigate([route]);
   }
 }

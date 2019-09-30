@@ -1,11 +1,22 @@
-<main>
-    <div class="text-center container-fluid border border-dark p-5 rounded-lg mx-auto mt-5" id="dataDisplay">
-        <h1 class="display-4">Edit Account</h1>
-        <form id="editForm">
-            <label for="editEmail" class="sr-only">Email Address</label>
-            <input name="email" type="email" id="editEmail" class="form-control" placeholder="Email address" required autofocus />
-            <button type="button" id="editEmailBtn" class="btn mt-3 btn-outline-warning">Edit</button>
-            <button type="button" id="delBtn" class="btn mt-3 btn-outline-danger">Delete Account</button>
-        </form>
-    </div>
-</main>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">User Name</th>
+                <th scope="col">Email</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{user.userName}}</td>
+                <td>{{user.emailAddress}}</td>
+                <td>
+                    <!-- Todo: Implement Edit button -->
+                    <button type="button" class="btn btn-info btn-sm btn-edit" value="{{user.userId}}" disabled>Edit</button>
+                    <button type="button" class="btn btn-danger btn-sm btn-delete" value="{{user.userId}}" (click)="onDelete(user.userId)">Delete</button>
+                </td>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+        <!-- Dynamically populated -->
+    </table>
+</div>

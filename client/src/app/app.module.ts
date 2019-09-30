@@ -15,12 +15,13 @@ import { ManagerComponent } from './manager/manager.component';
 
 import { UserService } from './providers/user.service';
 import { AuthService } from './providers/auth.service';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'manager', component: ManagerComponent},
+  {path: 'user-edit', component: UserEditComponent},
   {path: 'teams', component: TeamsComponent}
 ];
 
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     TeamsComponent,
-    ManagerComponent
+    ManagerComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
