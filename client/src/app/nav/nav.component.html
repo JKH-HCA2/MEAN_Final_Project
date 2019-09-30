@@ -14,7 +14,7 @@
                     <a class="nav-link" (click)="goHere('teams')">Teams </a>
                 </li>
                 <li *ngIf="isAuth()" class="nav-item">
-                    <a class="nav-link" (click)="goHere('manager')">Edit Account </a>
+                    <a class="nav-link" (click)="goHere('user-edit')">Edit Account </a>
                 </li>
                 <li *ngIf="!isAuth()" class="nav-item">
                     <a class="nav-link" (click)="goHere('register')">Register</a>

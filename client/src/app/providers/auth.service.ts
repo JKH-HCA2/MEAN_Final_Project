@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private isAuth: boolean = false;
   private isAdmin: boolean = false;
+  private uniqueId: number;
   constructor() {}
 
   setAuthStatus(status: boolean) {
@@ -22,5 +23,13 @@ export class AuthService {
 
   getAdminStatus() {
     return this.isAdmin;
+  }
+
+  setUniqueId(id: number) {
+    this.uniqueId = id;
+  }
+
+  getUniqueId() {
+    return this.uniqueId;
   }
 }

@@ -17,14 +17,8 @@ $(function () {
     console.log(id)
     $("#editBtn").click(() => {
         window.location.href = '/users/edit/' + id;
-    })
-
-    
-    
+    })    
 });
-
-
-
 /*
 *
 * Function: Master function that controls the functionality of all the JavaScript on the page
@@ -32,7 +26,6 @@ $(function () {
 * Author: Jeremy Han
 *
 */
-
 function getFilter() {
     // Remove block clears generated content whenever the function is fired
     $("#regBtn").remove();

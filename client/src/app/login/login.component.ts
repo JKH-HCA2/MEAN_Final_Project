@@ -40,8 +40,13 @@ export class LoginComponent implements OnInit {
           this.errMsg = 'Login unsuccessful.';
           this.error = true;
           this.authService.setAuthStatus(false);
+          this.authService.setUniqueId(0)
         } else {
+          if (data["is_admin"] == 1) {
+            this.authService.setAdminStatus(true)
+          }
           this.authService.setAuthStatus(true);
+          this.authService.setUniqueId(data["id"]);
           this.router.navigate(['teams']);
         }
       });

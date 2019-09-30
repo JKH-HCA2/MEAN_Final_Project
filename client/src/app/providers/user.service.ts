@@ -30,7 +30,7 @@ export class UserService {
   }
 
   deleteUser(userId: number) {
-    return this.http.delete(`${this.usersEndpoint}${userId}`, this.httpOptions)
+    return this.http.delete(`${this.usersEndpoint}delete/${userId}`, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
   
@@ -40,10 +40,12 @@ export class UserService {
   }
 
   getUserById(userId: number) {
-    return this.http.get<User>(`${this.usersEndpoint}${userId}`, this.httpOptions);
+    return this.http.get(`${this.usersEndpoint}user/${userId}`, this.httpOptions)
+    .pipe(map(res => <any[]>res));
   }
 
-  updateUser(user: User) {
-    return this.http.put(`${this.usersEndpoint}${user.userId}`, user);
+  updateUser(userId: number, email: string) {
+    return this.http.put(`${this.usersEndpoint}edit/${userId}`, {email: email}, this.httpOptions)
+      .pipe(map(res => <any[]>res));
   }
 }

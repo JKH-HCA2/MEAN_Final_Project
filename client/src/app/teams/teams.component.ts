@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from './../providers/user.service';
+import { AuthService } from '../providers/auth.service';
 
 @Component({
   selector: 'app-teams',
@@ -10,9 +11,12 @@ import { UserService } from './../providers/user.service';
 })
 export class TeamsComponent implements OnInit {
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    if(!this.authService.getAuthStatus()) {
+      this.router.navigate(['login']);
+    }
     
   }
 
