@@ -12,11 +12,11 @@ body {
   font-family: "Raleway", sans-serif;
   background-image: url("/assets/img/backgroundpattern.png");
 }
-/*
-th {
-  width: 100%;
+
+td {
+  height: 10px;
 }
-*/
+
 .hidden {
   display: none;
 }
@@ -48,6 +48,11 @@ th {
 .stop-warning {
   background-color: mistyrose;
   color: red;
+}
+
+#teamsTable {
+  width: 70%;
+  margin-left: 15%;
 }
 
 #dataDisplay {

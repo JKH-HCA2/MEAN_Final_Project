@@ -126,6 +126,38 @@
           "Phone": "555-000-0025"
         }
       ]
+    },
+    {
+      "TeamId": 108,
+      "TeamName": "Clippers",
+      "League": "D4",
+      "ManagerName": "Doc Rivers",
+      "ManagerPhone": "555-000-2207",
+      "ManagerEmail": "dRivers@aol.com",
+      "MinMemberAge": 18,
+      "MaxMemberAge": 37,
+      "MaxTeamMembers": 7,
+      "TeamGender": "Any",
+      "Members": [
+        {
+          "MemberId": 12,
+          "Email": "theclaw@gmail.com",
+          "MemberName": "Kawhi Leonard",
+          "ContactName": "Kawhi Leonard",
+          "Age": 28,
+          "Gender": "Male",
+          "Phone": "555-000-4408"
+        },
+        {
+          "MemberId": 13,
+          "Email": "pg13@gmail.com",
+          "MemberName": "Paul George",
+          "ContactName": "Paul George",
+          "Age": 29,
+          "Gender": "Male",
+          "Phone": "555-067-0009"
+        }
+      ]
     }
   ]
   

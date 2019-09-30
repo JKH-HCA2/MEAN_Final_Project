@@ -10,27 +10,26 @@
                     <option *ngFor="let league of leagues" value="{{league.Code}}" id="{{league.Code">{{league.Name}}</option>
                 </select>
             </div>
-
-            <div class=" col-lg-3">
-                        <button type="button" class="btn btn-primary" id="viewAllBtn" (click)="viewAll()">View All</button>
-                        <button type="reset" class="btn btn-secondary" id="resetBtn" (click)="resetBtn()">Reset</button>
+            <div class="form-row">
+                <div class="mx-auto mt-3">
+                    <button type="button" class="btn btn-primary" id="viewAllBtn" (click)="viewAll()">View All</button>
+                    <button type="reset" class="btn btn-secondary" id="resetBtn" (click)="resetBtn()">Reset</button>
+                </div>
             </div>
-
-
         </div>
     </form>
 
-    <div id="tableContainer">
-        <table class="table table-dark m-3" id="teamTable">
+    <div>
+        <table id="teamsTable" class="table table-dark mt-5">
             <thead id="teamHead">
                 <tr>
-                    <th>Team Name</th>
-                    <th>Manager Name</th>
-                    <th>Email</th>
-                    <th># of Members</th>
+                    <th scope="col">Team Name</th>
+                    <th scope="col">Manager Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"># of Members</th>
                 </tr>
             </thead>
-            <tbody class="white" id="teamBody">
+            <tbody id="teamBody">
                 <tr *ngFor="let team of teams">
                     <td>{{team.TeamName}}</td>
                     <td>{{team.ManagerName}}</td>
