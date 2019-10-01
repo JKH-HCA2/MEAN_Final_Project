@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TeamsComponent } from './teams/teams.component';
@@ -31,7 +30,6 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     NavComponent,
-    FooterComponent,
     LoginComponent,
     RegisterComponent,
     TeamsComponent,
